@@ -33,7 +33,7 @@ export const captureLead = async (req: Request, res: Response) => {
     // Send confirmation email asynchronously (do not await)
     if (process.env.RESEND_API_KEY && process.env.RESEND_API_KEY.trim() !== '') {
       const resendClient = new Resend(process.env.RESEND_API_KEY);
-      
+
       const emailHtml = `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 30px; border: 1px solid #e5e7eb; border-radius: 12px; background-color: #ffffff;">
           <h2 style="color: #0f172a; text-align: center; margin-bottom: 24px;">Your AI Spend Audit is Ready! 🚀</h2>
@@ -42,13 +42,13 @@ export const captureLead = async (req: Request, res: Response) => {
             Thank you for submitting your current AI tooling stack. We've successfully analyzed your usage and identified your exact optimization opportunities.
           </p>
           <div style="text-align: center; margin: 40px 0;">
-            <a href="http://localhost:5173/share/${auditId}" style="background-color: #10b981; color: #ffffff; padding: 14px 28px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; display: inline-block; box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.1);">
+            <a href="https://aispendaudit-23.vercel.app/share/${auditId}" style="background-color: #10b981; color: #ffffff; padding: 14px 28px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; display: inline-block; box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.1);">
               View Your Full Report
             </a>
           </div>
           <p style="color: #64748b; font-size: 14px; text-align: center; margin-top: 40px; border-top: 1px solid #e5e7eb; padding-top: 20px;">
             If the button doesn't work, copy and paste this link into your browser:<br>
-            <a href="http://localhost:5173/share/${auditId}" style="color: #3b82f6;">http://localhost:5173/share/${auditId}</a>
+            <a href="https://aispendaudit-23.vercel.app/share/${auditId}" style="color: #3b82f6;">https://aispendaudit-23.vercel.app/share/${auditId}</a>
             <br><br>
             Best regards,<br>
             <strong>The AI Audit Team</strong>
